@@ -7,9 +7,6 @@ Assembled from your step-by-step solutions.
 import numpy as np
 
 # Step 1 - impute_nan_with_mean
-import numpy as np
-
-
 def impute_nan_with_mean(X):
     res=X.copy()
     N, F = res.shape
