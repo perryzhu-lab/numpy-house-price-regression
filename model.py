@@ -8,18 +8,15 @@ import numpy as np
 
 # Step 1 - impute_nan_with_mean
 def impute_nan_with_mean(X):
-    res=X.copy()
-    N, F = res.shape
+    res = X.copy()
     nanmean = np.nanmean(res, axis=0)
-    for j in range(F):
-        if np.isnan(nanmean[j]):
-            nanmean[j]=0
-        
-    for j in range(F):
-        for i in range(N):
-            if np.isnan(res[i, j]):
-                res[i, j] = nanmean[j]
-
+    nanmean=np.where(np.isnan(nanmean),0,nanmean)
+    
+    res=np.where(
+        np.isnan(res),
+        nanmean,
+        res
+    )
     return res
 
 # Step 2 - compute_iqr_bounds (not yet solved)
