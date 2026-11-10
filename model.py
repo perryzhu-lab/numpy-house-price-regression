@@ -20,25 +20,12 @@ def impute_nan_with_mean(X):
     return res
 
 # Step 2 - compute_iqr_bounds
-# 第 2 步：计算 IQR 异常值边界
 def compute_iqr_bounds(X, k=1.5):
     N, F = X.shape
     # 计算每一列的q1和q3
-    q1 = []
-    q3 = []
-    iqr = []
-    for j in range(F):
-        q1_j = np.percentile(X[:, j], 25)
-        q3_j = np.percentile(X[:, j], 75)
-        iqr_j = q3_j - q1_j
-        q1.append(q1_j)
-        q3.append(q3_j)
-        iqr.append(iqr_j)
-    # 转换为 NumPy 数组
-    q1 = np.asarray(q1)
-    q3 = np.asarray(q3)
-    iqr = np.asarray(iqr)
-
+    q1 = np.percentile(X, 25, axis=0)
+    q3 = np.percentile(X, 75, axis=0)
+    iqr = q3 - q1
     lower = q1 - k * iqr
     upper = q3 + k * iqr
     return lower, upper
