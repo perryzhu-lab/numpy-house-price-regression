@@ -45,8 +45,13 @@ def append_column(X, col):
     res = np.column_stack((X, col))
     return res
 
-# Step 6 - one_hot_encode (not yet solved)
-# TODO: implement
+# Step 6 - one_hot_encode
+def one_hot_encode(labels):
+    categories, inverse = np.unique(labels, return_inverse=True)
+    rows = np.arange(len(labels))
+    matrix = np.zeros((len(labels), len(categories)), dtype=float)
+    matrix[rows,inverse] = 1.0
+    return matrix
 
 # Step 7 - fit_standardizer (not yet solved)
 # TODO: implement
