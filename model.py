@@ -40,8 +40,10 @@ def make_ratio_feature(numerator, denominator, eps=1e-8):
     safe_denominator = denominator + eps
     return numerator / safe_denominator
 
-# Step 5 - append_column (not yet solved)
-# TODO: implement
+# Step 5 - append_column
+def append_column(X, col):
+    res = np.column_stack((X, col))
+    return res
 
 # Step 6 - one_hot_encode (not yet solved)
 # TODO: implement
