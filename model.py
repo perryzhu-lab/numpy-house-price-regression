@@ -53,8 +53,12 @@ def one_hot_encode(labels):
     matrix[rows,inverse] = 1.0
     return matrix
 
-# Step 7 - fit_standardizer (not yet solved)
-# TODO: implement
+# Step 7 - fit_standardizer
+def fit_standardizer(X):
+    mean = np.mean(X, axis=0)
+    std = np.std(X, axis=0)
+    std[std == 0] = 1.0
+    return (mean, std)
 
 # Step 8 - apply_standardizer (not yet solved)
 # TODO: implement
