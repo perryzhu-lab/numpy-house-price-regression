@@ -31,7 +31,6 @@ def compute_iqr_bounds(X, k=1.5):
     return lower, upper
 
 # Step 3 - clip_columns
-# 第 3 步：按列裁剪特征矩阵
 def clip_columns(X, lower, upper):
     res = np.clip(X, lower, upper)
     return res
