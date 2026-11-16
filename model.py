@@ -65,8 +65,11 @@ def apply_standardizer(X, mean, std):
     X_standardized = (X - mean) / std
     return X_standardized
 
-# Step 9 - add_bias_column (not yet solved)
-# TODO: implement
+# Step 9 - add_bias_column
+def add_bias_column(X):
+    bias = np.ones(len(X))
+    bias = bias.reshape(-1, 1)
+    return np.concatenate((bias, X), axis=1)
 
 # Step 10 - make_shuffled_indices (not yet solved)
 # TODO: implement
