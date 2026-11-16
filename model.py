@@ -35,8 +35,10 @@ def clip_columns(X, lower, upper):
     res = np.clip(X, lower, upper)
     return res
 
-# Step 4 - make_ratio_feature (not yet solved)
-# TODO: implement
+# Step 4 - make_ratio_feature
+def make_ratio_feature(numerator, denominator, eps=1e-8):
+    safe_denominator = denominator + eps
+    return numerator / safe_denominator
 
 # Step 5 - append_column (not yet solved)
 # TODO: implement
