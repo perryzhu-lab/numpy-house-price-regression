@@ -62,8 +62,8 @@ def fit_standardizer(X):
 
 # Step 8 - apply_standardizer
 def apply_standardizer(X, mean, std):
-    X_standarded = (X - mean) / std
-    return X_standarded
+    X_standardized = (X - mean) / std
+    return X_standardized
 
 # Step 9 - add_bias_column (not yet solved)
 # TODO: implement
