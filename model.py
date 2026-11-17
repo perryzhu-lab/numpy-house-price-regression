@@ -105,8 +105,11 @@ def ols_predict(X, theta):
     y_pred = X @ theta
     return y_pred
 
-# Step 15 - mean_absolute_error (not yet solved)
-# TODO: implement
+# Step 15 - mean_absolute_error
+def mean_absolute_error(y_true, y_pred):
+    error = np.mean(np.abs(y_pred - y_true))
+    value = float(error)
+    return value
 
 # Step 16 - root_mean_squared_error (not yet solved)
 # TODO: implement
