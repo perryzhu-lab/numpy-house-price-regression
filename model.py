@@ -111,8 +111,11 @@ def mean_absolute_error(y_true, y_pred):
     value = float(error)
     return value
 
-# Step 16 - root_mean_squared_error (not yet solved)
-# TODO: implement
+# Step 16 - root_mean_squared_error
+def root_mean_squared_error(y_true, y_pred):
+    error = np.sqrt(np.mean((y_true - y_pred) ** 2))
+    value = float(error)
+    return value
 
 # Step 17 - r_squared (not yet solved)
 # TODO: implement
