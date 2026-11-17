@@ -86,8 +86,12 @@ def partition_indices(indices, train_ratio, val_ratio):
     test_idx = indices[train_nums + val_nums :]
     return train_idx, val_idx, test_idx
 
-# Step 12 - subset_xy (not yet solved)
-# TODO: implement
+# Step 12 - subset_xy
+# 第 12 步：根据索引提取特征和标签子集
+def subset_xy(X, y, indices):
+    X_sub=X[indices]
+    y_sub=y[indices]
+    return X_sub,y_sub
 
 # Step 13 - ols_fit (not yet solved)
 # TODO: implement
