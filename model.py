@@ -129,7 +129,6 @@ def r_squared(y_true, y_pred):
     return r_2
 
 # Step 18 - residual_summary
-# 第 18 步：残差统计摘要
 def residual_summary(y_true, y_pred):
     dict={}
     error = y_true - y_pred
