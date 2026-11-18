@@ -158,8 +158,6 @@ def assemble_feature_matrix(X_num, ratio_num_idx, ratio_den_idx, cat_labels=None
     return new_X
 
 # Step 21 - make_train_val_test
-import numpy as np
-
 def make_train_val_test(X, y, train_ratio, val_ratio, seed):
     result = {}
 
