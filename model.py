@@ -196,8 +196,14 @@ def standardize_and_add_bias(splits):
     std_splits["X_test"] = X_test
     return std_splits, mean, std
 
-# Step 23 - evaluate_predictions (not yet solved)
-# TODO: implement
+# Step 23 - evaluate_predictions
+def evaluate_predictions(y_true, y_pred):
+    res = {}
+    res["mae"] = mean_absolute_error(y_true, y_pred)
+    res["rmse"] = root_mean_squared_error(y_true, y_pred)
+    res["r2"] = r_squared(y_true, y_pred)
+    res["residual_summary"] = residual_summary(y_true, y_pred)
+    return res
 
 # Step 24 - house_price_pipeline (not yet solved)
 # TODO: implement
