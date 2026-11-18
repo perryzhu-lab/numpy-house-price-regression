@@ -147,8 +147,15 @@ def prepare_cleaned_features(X, iqr_k=1.5):
     res = clip_columns(X_clean, lower, upper)
     return res
 
-# Step 20 - assemble_feature_matrix (not yet solved)
-# TODO: implement
+# Step 20 - assemble_feature_matrix
+import numpy as np
+def assemble_feature_matrix(X_num, ratio_num_idx, ratio_den_idx, cat_labels=None):
+    ratio = make_ratio_feature(X_num[:, ratio_num_idx], X_num[:, ratio_den_idx])
+    new_X = append_column(X_num, ratio)
+    if cat_labels is not None:
+        matrix = one_hot_encode(cat_labels)
+        new_X = np.hstack((new_X, matrix))
+    return new_X
 
 # Step 21 - make_train_val_test (not yet solved)
 # TODO: implement
